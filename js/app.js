@@ -96,6 +96,7 @@ function handClick(event){
     else{
         let button=document.getElementById('result');
         button.addEventListener('click',makeList);
+        button.hidden=false;
 
         function makeList(event){
             console.log(event);
@@ -106,11 +107,11 @@ function handClick(event){
             for (let i = 0; i <Bus.allBuses.length; i++) {
                result=document.createElement('li');
                 list.appendChild(result);
-                result.textContent=`${Bus.allBuses[i].nameBus} had ${Bus.allBuses[i].votes} votes , and was seen ${userCount}times`
+                result.textContent=`${Bus.allBuses[i].nameBus} had ${Bus.allBuses[i].votes} votes , and was seen ${Bus.allBuses[i].shownTime}times`
 
             
         }
-       
+       button.removeEventListener('click',makeList)
 
     }
     allImageElement.removeEventListener('click',handClick);
