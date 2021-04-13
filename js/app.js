@@ -5,7 +5,7 @@ let firstImageElement= document.getElementById('first-image');
 let secondImageElement= document.getElementById('second-image');
 let thirdImageElement= document.getElementById('third-image');
 
-let maxTries=10;
+let maxTries=25;
 let userCount=0;
 
 let firstImageIndex;
