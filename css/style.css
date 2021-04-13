@@ -1,0 +1,43 @@
+body{
+    box-sizing: border-box;
+    background-color: azure;
+    font-family: 'Zen Dots', cursive;
+}
+
+header{
+    text-align: center;
+    color: maroon;
+    padding: 30px;
+    margin-bottom: 40px;
+    font-size: 30px;
+    background-color: papayawhip;
+
+}
+#images{
+    text-align: center;
+    /* display: inline-block; */
+   /* width: 200px;  */
+    
+}
+#result{
+    color: beige;
+    background-color: brown;
+    padding: 20px;
+    font-size: 15px;
+    box-shadow:chocolate;
+    border-radius: 6px;
+    text-align: center;
+}
+
+ul li{
+    
+    color: maroon;
+
+
+}
+
+footer{
+    background-color: papayawhip;
+   
+
+}
