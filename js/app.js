@@ -103,9 +103,10 @@ function handClick(event){
         Bus.allBuses[firstImageIndex].vote++;
     }else if(event.target.id==='second-image'){
         Bus.allBuses[secondImageIndex].vote++;
-    }else if(event.target.id==='second-image') {
+    }else if(event.target.id==='third-image') {
         Bus.allBuses[thirdImageIndex].vote++;
     }
+
     else{
         alert('please click on the images');
         userCount--; 
