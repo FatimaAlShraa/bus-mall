@@ -24,6 +24,7 @@ function Bus(nameBus,source){
 
     Bus.allBuses.push(this);
     namesArr.push(this.nameBus);
+    
 }
 
 Bus.allBuses=[];
@@ -50,6 +51,37 @@ new Bus('water-can','img/water-can.jpg');
 new Bus('wine-glass','img/wine-glass.jpg');
 
 console.log(Bus.allBuses);
+
+
+function updateStorge(){
+    let arrayString=JSON.stringify(Bus.allBuses);
+    console.log(Bus.allBuses);
+    console.log(arrayString);
+    localStorage.setItem('Bus',arrayString);
+
+}
+
+function getBusOrder(){
+
+    let info= localStorage.getItem('Bus');
+    console.log(info);
+
+    let busData=JSON.parse(info);
+    console.log(busData);
+
+    if(busData !==null) {
+        Bus.allBuses=busData;
+    }
+    renderImage();
+
+}
+
+
+
+
+
+
+
 
 function randomIndex(){
     return Math.floor(Math.random() * Bus.allBuses.length);
@@ -85,6 +117,7 @@ repeat.push(firstImageIndex);
 repeat.push(secondImageIndex);
 repeat.push(thirdImageIndex);
 console.log(repeat);
+
 }
 renderImage();
 
@@ -111,10 +144,14 @@ function handClick(event){
         alert('please click on the images');
         userCount--; 
       }
+     
   
     renderImage();
+    
     }
     else{
+
+        updateStorge();
         let button=document.getElementById('result');
         button.addEventListener('click',makeList);
         button.hidden=false;
@@ -165,13 +202,7 @@ function chart() {
             label: 'BusMall votes',
             data: votesArr,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                 'rgba(255, 159, 64, 0.2)',
-                 'rgba(255, 205, 86, 0.2)',
-                 'rgba(75, 192, 192, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-               'rgba(153, 102, 255, 0.2)',
-                'rgba(201, 203, 207, 0.2)'
+                'chocolate'
             ],
       
             borderWidth: 1
@@ -181,13 +212,7 @@ function chart() {
             label: 'BusMall shown',
             data: shownArr,
             backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(255, 159, 64)',
-                'rgb(255, 205, 86)',
-                'rgb(75, 192, 192)',
-                'rgb(54, 162, 235)',
-                'rgb(153, 102, 255)',
-                'rgb(201, 203, 207)'            ],
+               'black'             ],
       
             borderWidth: 1
           }
@@ -200,5 +225,4 @@ function chart() {
 
 
 }
-
-
+getBusOrder();
